@@ -25,7 +25,7 @@ export class WeatherServiceProvider {
 
     return new Promise(resolve => {
       let apiURL:string = 'https://api.darksky.net/forecast/e542b689b461473106dfd91d42554991/';
-      apiURL = '/api/forecast/';  // enable proxy for testing
+      //apiURL = '/api/forecast/';  // enable proxy for testing
 
       //this.http.get('/api/forecast/' + currentLoc.lat + ',' + currentLoc.lon)
       this.http.get(apiURL + currentLoc.lat + ',' + currentLoc.lon)
