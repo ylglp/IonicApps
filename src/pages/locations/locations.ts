@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
 
-import { CurrentLoc } from '../../interfaces/current-loc';
 import { WeatherLocation } from '../../interfaces/weather-location';
 import { LocationsServiceProvider } from '../../providers/locations-service/locations-service';
 import { GeocodeServiceProvider } from '../../providers/geocode-service/geocode-service';
