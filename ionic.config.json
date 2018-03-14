@@ -1,8 +1,14 @@
 {
   "name": "Ionic2Weather",
-  "app_id": "",
+  "app_id": "66411d65",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies": [
+    {
+      "path": "/api/forecast",
+      "proxyUrl": "https://api.darksky.net/forecast/e542b689b461473106dfd91d42554991"
+    }
+  ]
 }

@@ -1,0 +1,55 @@
+<!--
+  Generated template for the WeatherPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{pageTitle}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="circles"
+        refreshingText="Refreshing...">
+      </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngIf="day1 != undefined">
+    <ion-row>
+      <ion-col col-12>
+        <h1>{{currentData.temperature | number:'.0-0'}}&deg;</h1>
+        <p><ion-icon name="{{currentData.icon | weathericon}}"></ion-icon> {{currentData.summary}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        {{day1.temperatureMax | number:'.0-0'}}&deg;<br>
+        {{day1.temperatureMin | number:'.0-0'}}&deg;
+      </ion-col>
+      <ion-col col-4>
+        {{day2.temperatureMax | number:'.0-0'}}&deg;<br>
+        {{day2.temperatureMin | number:'.0-0'}}&deg;
+      </ion-col>
+      <ion-col col-4>
+        {{day3.temperatureMax | number:'.0-0'}}&deg;<br>
+        {{day3.temperatureMin | number:'.0-0'}}&deg;
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+
