@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import {Geolocation } from '@ionic-native/geolocation';
+import { HTTP } from '@ionic-native/http';
 
 import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
@@ -76,6 +77,7 @@ export class MyErrorHandler implements ErrorHandler {
     WeatherServiceProvider,
     GeocodeServiceProvider,
     LocationsServiceProvider,
+    HTTP,
     IonicErrorHandler,
     [{ provide: ErrorHandler, useClass: MyErrorHandler }]    
   ]
