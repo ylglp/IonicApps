@@ -30,7 +30,7 @@
   <ion-grid *ngIf="day1 != undefined">
     <ion-row>
       <ion-col col-12>
-        <h1>{{currentData.temperature | number:'.0-0'}}&deg;</h1>
+          Current Temperature: <h1>{{currentData.temperature | number:'.0-0'}}&deg;</h1>
         <p><ion-icon name="{{currentData.icon | weathericon}}"></ion-icon> {{currentData.summary}}</p>
       </ion-col>
     </ion-row>
