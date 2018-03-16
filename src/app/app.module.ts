@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import {Geolocation } from '@ionic-native/geolocation';
+import { Geolocation } from '@ionic-native/geolocation';
 import { HTTP } from '@ionic-native/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { Pro } from '@ionic/pro';
 import { Injectable, Injector } from '@angular/core';
@@ -11,6 +13,8 @@ import { Injectable, Injector } from '@angular/core';
 import { MyApp } from './app.component';
 import { WeatherPage } from '../pages/weather/weather';
 import { LocationsPage } from '../pages/locations/locations';
+import { WebPage } from '../pages/web/web';
+import { ToolsPage } from '../pages/tools/tools';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -49,7 +53,9 @@ export class MyErrorHandler implements ErrorHandler {
     MyApp,
     WeathericonPipe,
     WeatherPage,
-    LocationsPage
+    LocationsPage,
+    WebPage,
+    ToolsPage
   ],
   imports: [
     BrowserModule,
@@ -62,12 +68,15 @@ export class MyErrorHandler implements ErrorHandler {
         }
       }
     }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     WeatherPage,
-    LocationsPage
+    LocationsPage,
+    WebPage,
+    ToolsPage
   ],
   providers: [
     StatusBar,
@@ -78,6 +87,7 @@ export class MyErrorHandler implements ErrorHandler {
     GeocodeServiceProvider,
     LocationsServiceProvider,
     HTTP,
+    InAppBrowser,
     IonicErrorHandler,
     [{ provide: ErrorHandler, useClass: MyErrorHandler }]    
   ]

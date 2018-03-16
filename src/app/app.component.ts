@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { WeatherPage } from '../pages/weather/weather';
 import { LocationsPage } from '../pages/locations/locations';
+import { WebPage } from '../pages/web/web';
+import { ToolsPage } from '../pages/tools/tools';
 import { CurrentLoc } from '../interfaces/current-loc';
 import { LocationsServiceProvider } from '../providers/locations-service/locations-service';
 import { WeatherLocation } from '../interfaces/weather-location';
@@ -15,7 +17,7 @@ import { WeatherLocation } from '../interfaces/weather-location';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = WeatherPage;
+  rootPage: any = WebPage;
 
   pages: Array<{title: string, component: any, icon: string, loc?:CurrentLoc}>;
 
@@ -86,7 +88,9 @@ export class MyApp {
     this.locationsService.locations$.subscribe((locs: Array<WeatherLocation>) => {
       this.pages = [
         {title: 'Edit Locations', component: LocationsPage, icon: 'create' },
-        { title: 'Current Location', component: WeatherPage, icon: 'pin' }
+        { title: 'Current Location', component: WeatherPage, icon: 'pin' },
+        { title: 'Web', component: WebPage, icon: 'cloud' },
+        { title: 'Tools', component: ToolsPage, icon: 'cog' }
       ];
       for (let newLoc of locs) {
         this.pages.push(newLoc);

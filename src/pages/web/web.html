@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Web App</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 style="text-align:center;">Web Application</h3>
+
+  <ion-item>
+    <ion-label floating>URL</ion-label>
+    <ion-input type="url" [(ngModel)]="url"></ion-input>
+  </ion-item>
+
+  <button ion-button block clear (click)="openWebpage(url)">Open Webpage</button>
+
+  <br><br>
+
+  <a href="http://www.google.com" target="_blank" style="font-size:15pt;">http://www.google.com</a>
+  <br><br>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+</ion-content>
